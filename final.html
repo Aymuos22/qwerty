@@ -11,22 +11,70 @@
             background-color: #ffebcd;
             color: #ff4500;
         }
+
         h1 {
             font-size: 60px;
             margin-top: 100px;
         }
+
         p {
             font-size: 30px;
             margin-top: 20px;
         }
+
+        /* Ripple Effect Styles */
+        .ripple-container {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .ripple-container img {
+            display: block;
+            margin: 40px auto;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            opacity: 0;
+            animation: ripple 1s ease-out forwards;
+        }
+
+        @keyframes ripple {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
+    <script>
+        // JavaScript to detect the 'd' key press and redirect to easter.html
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'd' || event.key === 'D') {
+                window.location.href = 'easter.html'; // Redirect to the desired page
+            }
+        });
+    </script>
 </head>
 <body>
 
     <h1>Happy Birthday Adya🎉🎂!</h1>
     <p>Party kab mil rahi?? Zaitoon se neeche toh nhi chalega obv tum rich ho</p>
+
+    <div class="ripple-container">
+        <img src="img.jpg" alt="Birthday Image">
+    </div>
+
     <br>
     <br>
     <p>aur agli baar pls saath photo leni h yaad dilana</p>
+
 </body>
 </html>
