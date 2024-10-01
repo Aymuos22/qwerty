@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fc;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 50px auto;
+            padding: 20px 0;
+            max-width: 900px;
+            width: 90%;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-event {
+            position: relative;
+            background-color: white;
+            width: 45%;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+            margin-bottom: 30px;
+        }
+
+        .timeline-event.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-event.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #007bff;
+            top: 30px;
+            left: -50px;
+            z-index: 1;
+            border: 4px solid white;
+        }
+
+        .timeline-event.right::before {
+            left: auto;
+            right: -50px;
+        }
+
+        .timeline-event.left::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 30px;
+            right: -20px;
+            border: 10px solid transparent;
+            border-left-color: white;
+        }
+
+        .timeline-event.right::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 30px;
+            left: -20px;
+            border: 10px solid transparent;
+            border-right-color: white;
+        }
+
+        .event-title {
+            font-size: 22px;
+            color: #007bff;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .event-content {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover effect */
+        .timeline-event:hover {
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+            transform: translateY(-10px);
+        }
+
+        /* Additional message styling */
+        .next-step {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #007bff;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid;
+            width: fit-content;
+            display: inline-block;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .timeline-event {
+                width: 90%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .timeline-event.left, .timeline-event.right {
+                left: 0;
+            }
+
+            .timeline-event::after, .timeline-event::before {
+                left: 50%;
+                margin-left: -10px;
+            }
+
+            .timeline::after {
+                left: 50%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Kahani abb tk</h1>
+    </header>
+
+    
+
+    <div class="timeline">
+        <div class="timeline-event left">
+            <div class="event-title">Solidity Coding</div>
+            <div class="event-content">Remember how you used to do solidity coding.</div>
+        </div>
+
+        <div class="timeline-event right">
+            <div class="event-title">UBS Sofa</div>
+            <div class="event-content">UBS k sofa par mujhe pehchan ne ki acting.</div>
+        </div>
+
+        <div class="timeline-event left">
+            <div class="event-title">Sukhim Momo</div>
+            <div class="event-content">Outing to Sukhim momo.</div>
+        </div>
+
+        <div class="timeline-event right">
+            <div class="event-title">Trek</div>
+            <div class="event-content">Trek par tum gir na jana ye darr tha mera.</div>
+        </div>
+
+        <div class="timeline-event left">
+            <div class="event-title">Sweet Candy</div>
+            <div class="event-content">Desk pr sweet candy negotiations.</div>
+        </div>
+
+        <div class="timeline-event right">
+            <div class="event-title">Drug Dealer</div>
+            <div class="event-content">Drug dealer bana diya tumne :(</div>
+        </div>
+
+        <div class="timeline-event left">
+            <div class="event-title">Rakhi</div>
+            <div class="event-content">Rakhi... waise I am thankful.</div>
+        </div>
+    </div>
+
+    <!-- Typewriter Effect Text -->
+    <p id="typewriter" class="next-step"></p>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Adya Kolkata Ltd. | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Array of timeline events
+        const events = document.querySelectorAll('.timeline-event');
+        const typewriter = document.getElementById('typewriter');
+        const text = "Big-tech jaana hai saath mein ye agli baar likhunga";
+        let charIndex = 0;
+    
+        // Function to reveal events one by one
+        function revealEvents() {
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < events.length) {
+                    events[index].classList.add('reveal');  // Add class to reveal the event
+                    index++;
+                } else {
+                    clearInterval(interval);  // Stop the interval when all events are revealed
+                    setTimeout(typeText, 500); // Activate typewriter effect after all events are revealed
+                }
+            }, 800);  // Delay of 0.8 seconds (800ms) between each reveal
+        }
+    
+        // Function to simulate typewriter effect
+        function typeText() {
+            if (charIndex < text.length) {
+                typewriter.textContent += text.charAt(charIndex);  // Add next letter
+                charIndex++;
+                setTimeout(typeText, 100);  // Speed of typing each character
+            } else {
+                setTimeout(redirectToGame, 1000);  // Wait 1 second after typing finishes and then redirect
+            }
+        }
+    
+        // Function to redirect to game.html after typewriter effect
+        function redirectToGame() {
+            window.location.href = 'game.html';  // Redirect to game.html
+        }
+    
+        // Trigger the reveal function when the page loads
+        window.onload = revealEvents;
+    </script>
+    
+
+</body>
+</html>

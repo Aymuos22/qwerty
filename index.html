@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f3f4f6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        input {
+            padding: 12px;
+            font-size: 18px;
+            width: 300px;
+            max-width: 90%;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            border-color: #28a745;
+        }
+        button {
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .message {
+            margin-top: 20px;
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        .header {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .subtext {
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Is It Really You??</h1>
+        <p class="subtext">Aur ye akele dekhna... confidential content ahead 😉</p>
+        <h2>Meri akhri reel mein akhri konsi mithai thi?</h2>
+        <p>Meri reel mat ignore kiya karo... mai gussa ho jaunga 😡</p>
+        <input type="text" id="answer" placeholder="Enter your answer">
+        <br>
+        <button onclick="checkAnswer()">Submit</button>
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.toLowerCase();
+            if (answer === 'jalebi') {
+                window.location.href = 'timeline.html';
+            } else {
+                document.getElementById('message').innerText = 'Wrong answer! Try again.';
+            }
+        }
+    </script>
+</body>
+</html>
